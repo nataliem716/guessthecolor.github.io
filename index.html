@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: black;
+            font-family: 'Londrina Solid', cursive;
+            color: white;
+            font-size: 40px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1{
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #box{
+            color: black;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #container{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-around; 
+        }
+
+        #feedback{
+            font-size: 20px;
+            color: white;
+            padding: 10px;
+
+        }
+
+        #red{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: red;
+            border-radius: 5px;
+        }
+
+        #orange{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: orange;
+            border-radius: 5px;
+        }
+
+        #yellow{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: yellow;
+            border-radius: 5px;
+        }
+
+        #green{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: green;
+            border-radius: 5px;
+        }
+
+        #blue{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: blue;
+            border-radius: 5px;
+        }
+
+        #purple{
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: purple;
+            border-radius: 5px;
+        }
+
+        #red:hover{
+            opacity: 50%;
+            transition: 0.5s;
+        }
+
+        #orange:hover{
+            opacity: 50%;
+            transition: 0.5s;
+        }
+
+        #yellow:hover{
+            opacity: 50%;
+            transition: 0.5s;
+        }
+
+        #green:hover{
+            opacity: 50%;
+            transition: 0.5s;
+        }
+        
+        #blue:hover{
+            opacity: 50%;
+            transition: 0.5s;
+        }
+
+       #purple:hover{
+        opacity: 50%;
+        transition: 0.5s;
+       }
+
+
+    </style>
+</head>
+<body>
+    <h1>Guess the color!</h1>
+    <div id="feedback"></div>
+    <div id="container">
+        <button id="red">
+           
+        </button>
+
+        <button id="orange">
+            
+        </button>
+
+        <button id="yellow">
+           
+        </button>
+
+        <button id="green">
+            
+        </button>
+
+        <button id="blue">
+           
+        </button>
+
+        <button id="purple">
+           
+        </button>
+    </div>
+
+    <Script>
+         var cheese = ''
+
+        c()
+
+        function c(){
+            color = Math.floor(Math.random() * 6 + 1)
+            console.log(color)
+
+            if(color == 1)
+            {
+                cheese = 'red';
+            }
+            else if(color == 2)
+            {
+                cheese = 'orange';
+            }
+            else if(color == 3)
+            {
+                cheese = 'yellow';
+            }
+            else if(color == 4)
+            {
+                cheese = 'green';
+            }
+            else if(color == 5)
+            {
+                cheese = 'blue';
+            }
+            else if(color == 6)
+            {
+                cheese = 'purple';
+            }
+            console.log(cheese)
+        }
+
+        var red = document.getElementById('red')
+        var orange = document.getElementById('orange')
+        var yellow = document.getElementById('yellow')
+        var green = document.getElementById('green')
+        var blue = document.getElementById('blue')
+        var purple = document.getElementById('purple')
+        var feedback = document.getElementById('feedback')
+
+        red.addEventListener('click', () => choose('red'))
+        orange.addEventListener('click', () => choose('orange'))
+        yellow.addEventListener('click', () => choose('yellow'))
+        green.addEventListener('click', () => choose('green'))
+        blue.addEventListener('click', () => choose('blue'))
+        purple.addEventListener('click', () => choose('purple'))
+        PlayAgain.addEventListener('click', play)
+        StartButton.addEventListener('click', StartTransition)
+
+       
+
+        function choose(option){
+            var feedback = document.getElementById('feedback')
+
+            if(option == 'red'){
+                if (cheese == 'red'){
+                    feedback.textContent= 'win'
+                }
+                else{
+                    feedback.textContent= 'you suck!'
+                }
+            }
+
+            else if(option == 'orange'){
+                if (cheese == 'orange'){
+                    feedback.textContent = 'win'
+                }
+                else{
+                    feedback.textContent= 'loser!'
+                }
+            }
+
+            if(option == 'yellow'){
+                if (cheese == 'yellow'){
+                    feedback.textContent = 'win'
+                }
+                else{
+                    feedback.textContent = 'are you fr?'
+                }
+        }
+
+            if(option == 'green'){
+                if (cheese == 'green'){
+                    feedback.textContent = 'win'
+                }
+                else {
+                    feedback.textContent = 'cant even win a game..'
+                }
+        }
+
+            if(option == 'blue'){
+                if (cheese == 'blue'){
+                    feedback.textContent = 'win'
+                }
+                else {
+                    feedback.textContent = 'You are so dumb'
+                }
+            }
+            
+            if(option == 'purple'){
+                if (cheese == 'purple'){
+                    feedback.textContent = 'win'
+                }
+                else {
+                    feedback.textContent = 'you must be so stupid'
+                }
+            }
+        }
+
+    </Script>
+</body>
+</html>
